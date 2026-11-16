@@ -1,4 +1,10 @@
-<div class="munaaf-wrapper">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Trade With Munaaf</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
@@ -8,356 +14,209 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
+font-family:'Poppins',sans-serif;
 }
 
 body{
-font-family:'Poppins',sans-serif;
 background:#0f172a;
-}
-
-/* WRAPPER */
-
-.munaaf-wrapper{
-width:100%;
-min-height:100vh;
 display:flex;
 justify-content:center;
 align-items:center;
-padding:30px 15px;
-background:#0f172a;
+min-height:100vh;
+color:#fff;
 }
 
 /* CARD */
 
-.munaaf-card{
-width:100%;
+.container{
+width:95%;
 max-width:420px;
-padding:30px 22px;
-border-radius:22px;
-text-align:center;
-position:relative;
-overflow:hidden;
+padding:30px 25px;
+border-radius:18px;
 
 background:rgba(255,255,255,0.05);
-backdrop-filter:blur(14px);
+backdrop-filter:blur(12px);
 
 border:1px solid rgba(255,255,255,0.08);
 
-box-shadow:
-0 20px 60px rgba(0,0,0,0.6),
-0 0 25px rgba(255,215,0,0.08);
-}
-
-/* TOP GLOW */
-
-.munaaf-card::before{
-content:'';
-position:absolute;
-top:-120px;
-left:50%;
-transform:translateX(-50%);
-width:260px;
-height:260px;
-background:rgba(255,215,0,0.12);
-filter:blur(60px);
-border-radius:50%;
-}
-
-/* LOGO CENTER */
-
-.logo-center{
-display:flex;
-justify-content:center;
-align-items:center;
-width:100%;
-margin-bottom:15px;
+box-shadow:0 20px 60px rgba(0,0,0,0.6);
+text-align:center;
 }
 
 /* LOGO */
 
-.munaaf-logo{
-width:95px;
-height:95px;
+.logo{
+width:80px;
+height:80px;
 border-radius:50%;
-border:3px solid #FFD700;
-object-fit:cover;
-
-animation:logoZoom 2.5s infinite ease-in-out;
-}
-
-@keyframes logoZoom{
-0%{transform:scale(1);}
-50%{transform:scale(1.08);}
-100%{transform:scale(1);}
-}
-
-/* TITLE */
-
-.munaaf-title{
-font-size:24px;
-font-weight:700;
-color:#FFD700;
-margin-bottom:6px;
-letter-spacing:1px;
-}
-
-/* SUBTITLE */
-
-.munaaf-subtitle{
-font-size:14px;
-color:#ffffff;
-opacity:0.9;
+border:2px solid #FFD700;
 margin-bottom:12px;
 }
 
 /* TEXT */
 
-.munaaf-text{
+h1{
+font-size:22px;
+color:#FFD700;
+margin-bottom:6px;
+}
+
+h2{
+font-size:15px;
+opacity:0.9;
+margin-bottom:10px;
+}
+
+.sub{
 font-size:13px;
-color:#cbd5e1;
-line-height:1.6;
-margin-bottom:20px;
+opacity:0.7;
+margin-bottom:18px;
 }
 
 /* BUTTON */
 
-.munaaf-btn{
+.btn{
 display:block;
-width:100%;
 text-decoration:none;
-background:linear-gradient(135deg,#22c55e,#16a34a);
+background:#22c55e;
 color:#000;
-font-size:16px;
 font-weight:700;
 padding:16px;
-border-radius:14px;
-margin:14px 0;
+border-radius:10px;
+margin:12px 0;
 transition:0.3s;
-
-box-shadow:0 10px 25px rgba(34,197,94,0.35);
-
-animation:pulseBtn 1.5s infinite;
 }
 
-@keyframes pulseBtn{
-0%{transform:scale(1);}
-50%{transform:scale(1.05);}
-100%{transform:scale(1);}
-}
-
-.munaaf-btn:hover{
-transform:scale(1.06);
+.btn:hover{
+background:#16a34a;
+transform:scale(1.03);
 }
 
 /* TRUST BOX */
 
-.munaaf-trust{
-background:rgba(34,197,94,0.08);
-border:1px solid rgba(34,197,94,0.2);
-padding:12px;
-border-radius:12px;
+.trust{
+background:rgba(0,255,150,0.08);
+padding:10px;
+border-radius:10px;
 font-size:13px;
-line-height:1.8;
-margin-bottom:18px;
-color:#d1fae5;
+margin-bottom:15px;
+border:1px solid rgba(0,255,150,0.2);
 }
 
-/* POINTS */
+/* LIST */
 
-.munaaf-points{
+.points{
 list-style:none;
-text-align:left;
-margin:18px 0;
-}
-
-.munaaf-points li{
 font-size:14px;
-padding:9px 0;
-border-bottom:1px solid rgba(255,255,255,0.05);
-color:#f8fafc;
+text-align:left;
+margin:15px 0;
 }
 
-/* TIMER */
+.points li{
+margin:8px 0;
+}
 
-.munaaf-timer{
-margin-top:12px;
+/* URGENCY */
+
+.timer{
+margin-top:10px;
 font-size:13px;
-font-weight:600;
 color:#facc15;
-
-animation:blink 1.2s infinite;
 }
 
-@keyframes blink{
-0%{opacity:1;}
-50%{opacity:0.4;}
-100%{opacity:1;}
-}
+/* SOCIAL PROOF */
 
-/* PROOF */
-
-.munaaf-proof{
+.proof{
 margin-top:12px;
 font-size:12px;
-color:#cbd5e1;
-opacity:0.85;
+opacity:0.7;
+}
+
+/* FOOTER BRAND */
+
+.footer{
+margin-top:20px;
+font-size:12px;
+opacity:0.6;
+}
+
+.footer a{
+color:#38bdf8;
+text-decoration:none;
+font-weight:600;
+}
+
+.footer a:hover{
+text-decoration:underline;
 }
 
 /* RISK */
 
-.munaaf-risk{
-margin-top:15px;
+.risk{
+margin-top:10px;
 font-size:11px;
-opacity:0.6;
-color:#ffffff;
-}
-
-/* FOOTER */
-
-.munaaf-footer{
-margin-top:22px;
-font-size:12px;
-opacity:0.75;
-color:#ffffff;
-}
-
-.munaaf-footer a{
-color:#38bdf8;
-font-weight:600;
-text-decoration:none;
-}
-
-/* MOBILE */
-
-@media(max-width:480px){
-
-.munaaf-card{
-padding:26px 18px;
-border-radius:18px;
-}
-
-.munaaf-title{
-font-size:21px;
-}
-
-.munaaf-btn{
-font-size:15px;
-padding:15px;
-}
-
+opacity:0.5;
 }
 
 </style>
+</head>
 
-<div class="munaaf-card">
+<body>
 
-<!-- CENTER LOGO -->
+<div class="container">
 
-<div class="logo-center">
-<img src="https://i.ibb.co/HThtfpR7/Whats-App-Image-2026-01-30-at-8-54-08-PM.jpg" class="munaaf-logo">
-</div>
+<img src="https://i.ibb.co/HThtfpR7/Whats-App-Image-2026-01-30-at-8-54-08-PM.jpg" class="logo">
 
-<!-- TITLE -->
+<h1>TRADE WITH MUNAAF</h1>
+<h2>NIFTY • BANKNIFTY • OPTIONS</h2>
 
-<h1 class="munaaf-title">
-TRADE WITH MUNAAF
-</h1>
-
-<!-- SUBTITLE -->
-
-<h2 class="munaaf-subtitle">
-NIFTY • BANKNIFTY • OPTIONS
-</h2>
-
-<!-- TEXT -->
-
-<p class="munaaf-text">
-Daily Intraday Trading Signals & Professional Market Analysis For Smart Traders
+<p class="sub">
+Daily Intraday Trading Signals & Analysis
 </p>
 
-<!-- BUTTON -->
-
-<a href="https://t.me/+zOwF2_cdFBFlYTI1" class="munaaf-btn">
-🚀 JOIN FREE TELEGRAM CHANNEL
+<!-- TOP BUTTON -->
+<a href="https://t.me/+2PsKWi3L1Uk3NjZl" class="btn">
+🚀 Get Today’s Signals Free
 </a>
 
-<!-- TRUST -->
-
-<div class="munaaf-trust">
+<div class="trust">
 ✔ Trusted by 5,000+ Traders <br>
-✔ Daily Consistent Setups <br>
-✔ Beginner Friendly Guidance
+✔ Daily Consistent Setups
 </div>
 
-<!-- LIST -->
-
-<ul class="munaaf-points">
-<li>✔ 5–7 High Probability Trades Daily</li>
-<li>✔ Exact Entry • Stop Loss • Target</li>
-<li>✔ Live Market Updates & Analysis</li>
-<li>✔ Fast Buy/Sell Alerts</li>
-<li>✔ Premium Intraday Setups</li>
+<ul class="points">
+<li>✔ 5–7 High Probability Trades</li>
+<li>✔ Exact Entry, SL & Target</li>
+<li>✔ Beginner Friendly Guidance</li>
+<li>✔ Live Market Updates</li>
 </ul>
 
-<!-- SECOND BUTTON -->
-
-<a href="https://t.me/+zOwF2_cdFBFlYTI1" class="munaaf-btn">
-🔥 JOIN NOW FREE
+<!-- BOTTOM BUTTON -->
+<a href="https://t.me/+2PsKWi3L1Uk3NjZl" class="btn">
+🚀 Join Free Telegram Channel
 </a>
 
-<!-- TIMER -->
-
-<div class="munaaf-timer">
-⏳ FREE ACCESS CLOSING SOON
+<div class="timer">
+⏳ Free Access Closing Soon
 </div>
 
-<!-- PROOF -->
-
-<div class="munaaf-proof">
-📈 Active Community • Limited Seats Available
+<div class="proof">
+📈 Limited Seats • Active Community
 </div>
 
-<!-- RISK -->
+<p class="risk">
+⚠ Market investments are subject to risk
+</p>
 
-<div class="munaaf-risk">
-⚠ Market investments are subject to market risk.
-</div>
-
-<!-- FOOTER -->
-
-<div class="munaaf-footer">
+<!-- CLEAN FOOTER -->
+<div class="footer">
 Powered by 
-<a href="https://t.me/+k-z6FWZrh_RjYzBl" target="_blank">
-AD Agency
+<a href="https://t.me/+3XoqJNLxYHswNTc1" target="_blank">
+AdsBuild Agency
 </a>
 </div>
-<!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '1867065247759303');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=1867065247759303&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
-</div>
 
 </div>
 
-<!-- AUTO REDIRECT -->
-
-<script>
-
-setTimeout(function(){
-window.location.href="https://t.me/+zOwF2_cdFBFlYTI1";
-},8000);
-
-</script>
+</body>
+</html>
