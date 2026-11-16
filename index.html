@@ -1,260 +1,347 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<div class="munaaf-wrapper">
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
 <style>
+
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-html,
-body{
-    width:100%;
-    height:100%;
-    font-family:'Poppins',sans-serif;
-    background:linear-gradient(135deg,#0b6eb8,#18c13d);
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
 
 body{
-    overflow-x:hidden;
+font-family:'Poppins',sans-serif;
+background:#0f172a;
 }
 
-/* Full Screen Container */
+/* WRAPPER */
 
-.sio-main-container{
-    width:100%;
-    min-height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
+.munaaf-wrapper{
+width:100%;
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+padding:30px 15px;
+background:#0f172a;
 }
 
-/* Full Screen Card */
+/* CARD */
 
-.sio-landing-wrap{
-    width:100%;
-    min-height:100vh;
-    background:#fff;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    padding:30px 20px;
+.munaaf-card{
+width:100%;
+max-width:420px;
+padding:30px 22px;
+border-radius:22px;
+text-align:center;
+position:relative;
+overflow:hidden;
+
+background:rgba(255,255,255,0.05);
+backdrop-filter:blur(14px);
+
+border:1px solid rgba(255,255,255,0.08);
+
+box-shadow:
+0 20px 60px rgba(0,0,0,0.6),
+0 0 25px rgba(255,215,0,0.08);
 }
 
-/* Pulse Animation */
+/* TOP GLOW */
 
-@keyframes pulse-blue{
-0%{box-shadow:0 0 0 0 rgba(11,110,184,.7);}
-70%{box-shadow:0 0 0 18px rgba(11,110,184,0);}
-100%{box-shadow:0 0 0 0 rgba(11,110,184,0);}
+.munaaf-card::before{
+content:'';
+position:absolute;
+top:-120px;
+left:50%;
+transform:translateX(-50%);
+width:260px;
+height:260px;
+background:rgba(255,215,0,0.12);
+filter:blur(60px);
+border-radius:50%;
 }
 
-/* Button */
+/* LOGO CENTER */
 
-.sio-btn{
-    width:100%;
-    max-width:350px;
-    background:linear-gradient(45deg,#0b6eb8,#0a8be0);
-    color:#fff;
-    text-decoration:none;
-    padding:16px;
-    font-size:17px;
-    font-weight:700;
-    border-radius:50px;
-    margin:18px 0;
-    animation:pulse-blue 2s infinite;
-    transition:.3s;
+.logo-center{
+display:flex;
+justify-content:center;
+align-items:center;
+width:100%;
+margin-bottom:15px;
 }
 
-.sio-btn:hover{
-    transform:scale(1.05);
+/* LOGO */
+
+.munaaf-logo{
+width:95px;
+height:95px;
+border-radius:50%;
+border:3px solid #FFD700;
+object-fit:cover;
+
+animation:logoZoom 2.5s infinite ease-in-out;
 }
 
-/* Profile */
-
-.sio-profile{
-    margin:20px 0;
+@keyframes logoZoom{
+0%{transform:scale(1);}
+50%{transform:scale(1.08);}
+100%{transform:scale(1);}
 }
 
-.sio-avatar{
-    width:120px;
-    height:120px;
-    margin:auto;
-    border-radius:50%;
-    overflow:hidden;
-    border:4px solid #fff;
-    box-shadow:0 8px 20px rgba(0,0,0,.2);
+/* TITLE */
+
+.munaaf-title{
+font-size:24px;
+font-weight:700;
+color:#FFD700;
+margin-bottom:6px;
+letter-spacing:1px;
 }
 
-.sio-avatar img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
+/* SUBTITLE */
+
+.munaaf-subtitle{
+font-size:14px;
+color:#ffffff;
+opacity:0.9;
+margin-bottom:12px;
 }
 
-.sio-headline{
-    margin-top:15px;
-    font-size:28px;
-    font-weight:800;
-    color:#18c13d;
+/* TEXT */
+
+.munaaf-text{
+font-size:13px;
+color:#cbd5e1;
+line-height:1.6;
+margin-bottom:20px;
 }
 
-/* Features */
+/* BUTTON */
 
-.sio-features{
-    margin-top:20px;
-    width:100%;
-    max-width:450px;
+.munaaf-btn{
+display:block;
+width:100%;
+text-decoration:none;
+background:linear-gradient(135deg,#22c55e,#16a34a);
+color:#000;
+font-size:16px;
+font-weight:700;
+padding:16px;
+border-radius:14px;
+margin:14px 0;
+transition:0.3s;
+
+box-shadow:0 10px 25px rgba(34,197,94,0.35);
+
+animation:pulseBtn 1.5s infinite;
 }
 
-.sio-feature{
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    gap:10px;
-    margin:12px 0;
+@keyframes pulseBtn{
+0%{transform:scale(1);}
+50%{transform:scale(1.05);}
+100%{transform:scale(1);}
 }
 
-.sio-tick{
-    width:28px;
-    height:28px;
-    border-radius:50%;
-    background:#eaf7ea;
-    color:#18c13d;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    font-weight:bold;
+.munaaf-btn:hover{
+transform:scale(1.06);
 }
 
-.sio-feature p{
-    color:#333;
-    font-weight:600;
-    font-size:16px;
+/* TRUST BOX */
+
+.munaaf-trust{
+background:rgba(34,197,94,0.08);
+border:1px solid rgba(34,197,94,0.2);
+padding:12px;
+border-radius:12px;
+font-size:13px;
+line-height:1.8;
+margin-bottom:18px;
+color:#d1fae5;
 }
 
-/* Highlight */
+/* POINTS */
 
-.sio-highlight{
-    margin-top:20px;
-    background:#eef7ff;
-    color:#0b6eb8;
-    padding:12px;
-    border-radius:10px;
-    font-weight:700;
+.munaaf-points{
+list-style:none;
+text-align:left;
+margin:18px 0;
 }
 
-/* Disclaimer */
-
-.sio-disclaimer{
-    margin-top:25px;
-    font-size:12px;
-    color:#666;
-    line-height:1.6;
-    max-width:450px;
+.munaaf-points li{
+font-size:14px;
+padding:9px 0;
+border-bottom:1px solid rgba(255,255,255,0.05);
+color:#f8fafc;
 }
 
-/* Mobile */
+/* TIMER */
+
+.munaaf-timer{
+margin-top:12px;
+font-size:13px;
+font-weight:600;
+color:#facc15;
+
+animation:blink 1.2s infinite;
+}
+
+@keyframes blink{
+0%{opacity:1;}
+50%{opacity:0.4;}
+100%{opacity:1;}
+}
+
+/* PROOF */
+
+.munaaf-proof{
+margin-top:12px;
+font-size:12px;
+color:#cbd5e1;
+opacity:0.85;
+}
+
+/* RISK */
+
+.munaaf-risk{
+margin-top:15px;
+font-size:11px;
+opacity:0.6;
+color:#ffffff;
+}
+
+/* FOOTER */
+
+.munaaf-footer{
+margin-top:22px;
+font-size:12px;
+opacity:0.75;
+color:#ffffff;
+}
+
+.munaaf-footer a{
+color:#38bdf8;
+font-weight:600;
+text-decoration:none;
+}
+
+/* MOBILE */
 
 @media(max-width:480px){
 
-.sio-headline{
-    font-size:24px;
+.munaaf-card{
+padding:26px 18px;
+border-radius:18px;
 }
 
-.sio-btn{
-    font-size:15px;
+.munaaf-title{
+font-size:21px;
 }
 
-.sio-feature p{
-    font-size:14px;
+.munaaf-btn{
+font-size:15px;
+padding:15px;
 }
 
 }
+
 </style>
-</head>
 
-<body>
+<div class="munaaf-card">
 
-<div class="sio-main-container">
+<!-- CENTER LOGO -->
 
-<div class="sio-landing-wrap">
+<div class="logo-center">
+<img src="https://i.ibb.co/HThtfpR7/Whats-App-Image-2026-01-30-at-8-54-08-PM.jpg" class="munaaf-logo">
+</div>
 
-<a class="sio-btn" href="https://t.me/+u0Bk36zpe0QxZWY9" target="_blank">
-🚀 JOIN TELEGRAM CHANNEL
+<!-- TITLE -->
+
+<h1 class="munaaf-title">
+TRADE WITH MUNAAF
+</h1>
+
+<!-- SUBTITLE -->
+
+<h2 class="munaaf-subtitle">
+NIFTY • BANKNIFTY • OPTIONS
+</h2>
+
+<!-- TEXT -->
+
+<p class="munaaf-text">
+Daily Intraday Trading Signals & Professional Market Analysis For Smart Traders
+</p>
+
+<!-- BUTTON -->
+
+<a href="https://t.me/+zOwF2_cdFBFlYTI1" class="munaaf-btn">
+🚀 JOIN FREE TELEGRAM CHANNEL
 </a>
 
-<div class="sio-profile">
+<!-- TRUST -->
 
-<div class="sio-avatar">
-<img src="https://i.ibb.co/KjrBVv9h/mr88-B4-MCQeolto-Xob-M9-JEe-Eyn-ZMn-Bj-FMz-Ac0-SMDAi-h-Ff1-Qg-RBAkl-Xo7yo-Kxe-N-POtqpyfq-Ow-Kv-VPc-Ao-I-I.jpg" alt="Profile">
+<div class="munaaf-trust">
+✔ Trusted by 5,000+ Traders <br>
+✔ Daily Consistent Setups <br>
+✔ Beginner Friendly Guidance
 </div>
 
-<div class="sio-headline">
-Work From Home Handwriting Job
-</div>
+<!-- LIST -->
 
-</div>
+<ul class="munaaf-points">
+<li>✔ 5–7 High Probability Trades Daily</li>
+<li>✔ Exact Entry • Stop Loss • Target</li>
+<li>✔ Live Market Updates & Analysis</li>
+<li>✔ Fast Buy/Sell Alerts</li>
+<li>✔ Premium Intraday Setups</li>
+</ul>
 
-<div class="sio-features">
+<!-- SECOND BUTTON -->
 
-<div class="sio-feature">
-<div class="sio-tick">✓</div>
-<p>Simple Writing Work – No Experience Needed</p>
-</div>
-
-<div class="sio-feature">
-<div class="sio-tick">✓</div>
-<p>Earn ₹15,000 – ₹30,000 Per Month</p>
-</div>
-
-<div class="sio-feature">
-<div class="sio-tick">✓</div>
-<p>Work From Home • Flexible Timing</p>
-</div>
-
-<div class="sio-highlight">
-🚀 Limited Seats Available – Apply Today!
-</div>
-
-</div>
-
-<a class="sio-btn" href="https://t.me/+u0Bk36zpe0QxZWY9" target="_blank">
-🚀 JOIN TELEGRAM CHANNEL
+<a href="https://t.me/+zOwF2_cdFBFlYTI1" class="munaaf-btn">
+🔥 JOIN NOW FREE
 </a>
 
-<div class="sio-disclaimer">
-<b style="color:#0a7a3a;">Note:</b><br>
-This is project-based work. Earnings depend on performance and submission quality.
+<!-- TIMER -->
+
+<div class="munaaf-timer">
+⏳ FREE ACCESS CLOSING SOON
+</div>
+
+<!-- PROOF -->
+
+<div class="munaaf-proof">
+📈 Active Community • Limited Seats Available
+</div>
+
+<!-- RISK -->
+
+<div class="munaaf-risk">
+⚠ Market investments are subject to market risk.
+</div>
+
+<!-- FOOTER -->
+
+<div class="munaaf-footer">
+Powered by 
+<a href="https://t.me/+k-z6FWZrh_RjYzBl" target="_blank">
+AD Agency
+</a>
 </div>
 
 </div>
-<!-- Meta Pixel Code -->
+
+</div>
+
+<!-- AUTO REDIRECT -->
+
 <script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '4337354629820950');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=4337354629820950&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
-</div>
 
-</body>
-</html>
+setTimeout(function(){
+window.location.href="https://t.me/+zOwF2_cdFBFlYTI1";
+},8000);
+
+</script>
